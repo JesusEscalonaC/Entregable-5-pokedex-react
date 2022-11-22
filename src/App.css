@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+body{
+  margin: 0;
+  background-color: rgb(23, 24, 24);
+}
+.App{
+  width: 100%;
+  height: 100vh;
+  
+}
+.container-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: radial-gradient(circle,#3c3c3c,#313131,#262626,#1c1c1c,#121212);
+}
+.first-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #b1afaf;
+  
+}
+.first-page-logo{
+  width: 80%;
+  max-width: 700px;
+  align-self: center;
+  animation: logotype 2s ease-in-out alternate infinite;
+  z-index: 2;
+}
+
+@keyframes logotype{
+   0%{
+    transform: scale(.95);
+    filter: drop-shadow(0 0 5px rgb(216,218,109));
+   }
+   100%{
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(232,235,65,.781))
+   }
+}
+.first-page-subtitle{
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.first-page-text{
+  font-size: 16px;
+  margin: 0;
+}
+.first-page-form{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+.first-page-input{
+    background-color: #f000;
+    border-radius: 25px;
+    padding: 10px 0;
+    text-align: center;
+    border: none;
+    background-color: #ffffff1a;
+    color: #dbde36;
+    font-size: 1rem;
+}
+.first-page-button{
+  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    padding: 10px 15px;
+    letter-spacing: .06em;
+    position: relative;
+    font-family: inherit;
+    overflow: hidden;
+    transition: all .3s;
+    transition: .5s;
+    border-radius: 25px;
+    border: 2px solid rgb(216,218,109);
+    background: linear-gradient(to right,rgba(216,218,109,.116) 1%,transparent 40%,transparent 60%,rgba(216,218,109,.149) 100%);
+    color: #d8da6d;
+    box-shadow: inset 0 0 10px #d8da6d, 0 0 9px 3px #d8da6d2a;
+    transition: transform 0.5s;
+}
+.first-page-button:hover{
+    transform: scale(1.1);
+}
+.sky-container {
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  overflow: hidden;
+  transform: rotate(45deg);
+  top: 5px;
+}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg,#5f91ff,rgba(0,0,255,0));
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 3s ease-in-out infinite,shooting 3s ease-in-out infinite
+}
+
+.star:before,.star:after {
+  position: absolute;
+  content: "";
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg,rgba(0,0,255,0),#5f91ff,rgba(0,0,255,0));
+  border-radius: 100%;
+  transform: translate(50%) rotate(45deg);
+  animation: shining 3s ease-in-out infinite
+}
+
+.star:after {
+  transform: translate(50%) rotate(-45deg)
+}
+
+.star:nth-child(1) {
+  top: calc(50% - 200px);
+  left: calc(50% - 300px);
+  animation-delay: .65s
+}
+
+.star:nth-child(1):before,.star:nth-child(1):after {
+  animation-delay: .65s
+}
+
+.star:nth-child(2) {
+  top: calc(50% + 50px);
+  left: calc(50% - 190px);
+  animation-delay: .15s
+}
+
+.star:nth-child(2):before,.star:nth-child(2):after {
+  animation-delay: .15s
+}
+
+.star:nth-child(3) {
+  top: calc(50% + 90px);
+  left: calc(50% - 200px);
+  animation-delay: 1.6s
+}
+
+.star:nth-child(3):before,.star:nth-child(3):after {
+  animation-delay: 1.6s
+}
+
+.star:nth-child(4) {
+  top: calc(50% - 50px);
+  left: calc(50% - 250px);
+  animation-delay: 4.7s
+}
+
+.star:nth-child(4):before,.star:nth-child(4):after {
+  animation-delay: 4.7s
+}
+
+.star:nth-child(5) {
+  top: calc(50% + 190px);
+  left: calc(50% - 200px);
+  animation-delay: 2.1s
+}
+
+.star:nth-child(5):before,.star:nth-child(5):after {
+  animation-delay: 2.1s
+}
+@keyframes shining {
+  0% {
+      width: 0
+  }
+
+  50% {
+      width: 30px
+  }
+
+  to {
+      width: 0
+  }
+}
+@keyframes tail {
+  0% {
+      width: 0
+  }
+
+  30% {
+      width: 100px
+  }
+
+  to {
+      width: 0
+  }
+}
+@keyframes shooting {
+  0% {
+      transform: translate(0)
+  }
+
+  to {
+      transform: translate(320px)
+  }
+}
+
+.pokeball-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
