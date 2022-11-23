@@ -48,11 +48,11 @@ img {
 
 .pokeball__top {
   transform: translateY(-24%) translate(-20%) rotate(-30deg);
+  transition: .5s;
 }
 
 .container__pokeball:hover .pokeball__top {
   transform: translateY(0) translate(0) rotate(0);
-  transition: .5s;
 }
 
 .pokeball__img1 {

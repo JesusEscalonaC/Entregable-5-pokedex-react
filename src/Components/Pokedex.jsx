@@ -9,13 +9,15 @@ const Pokedex = () => {
   const [pokemon, setPokemon] = useState([])
   const [pokemonName, setPokemonName] = useState("")
   const [pokeTypes, setPokeTypes] = useState([])
+  const [ page, setPage ] = useState(1);
+
 
   const navigate = useNavigate();
-  const allPokemons = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
+  const allPokemons = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154';
 
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon/")
+      .get(allPokemons)
       .then(res => setPokemon(res.data.results))
 
     axios
@@ -32,10 +34,19 @@ const Pokedex = () => {
     const url = e.target.value;
     axios
       .get(url)
-      .then(res => setPokemon(res.data.pokemon ? res.data.pokemon : res.data.results ))
+      .then(res => { setPokemon(res.data.pokemon ? res.data.pokemon : res.data.results ); setPage(1) } )
   }
 
-  console.log(pokemon)
+  const pokemonsPerPage = 8;
+  const lastIndexPokemon = page * pokemonsPerPage;
+  const firstIndexPokemon = lastIndexPokemon - pokemonsPerPage;
+  const pokemonPaginated =  pokemon.slice(firstIndexPokemon , lastIndexPokemon);
+  const totalPages = Math.ceil(pokemon.length/pokemonsPerPage);
+  const numbersTotalPages = [];
+  for(let i=1; i <= totalPages; i++){
+    numbersTotalPages.push(i)
+  }
+  
 
   return (
     <div className='pokedex'>
@@ -59,13 +70,28 @@ const Pokedex = () => {
 
       <div className='pokeball-container'>
         {
-          pokemon.map(pokemon => (
+          pokemonPaginated.map(pokemon => (
             <PokemonCard
               key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
               url={pokemon.url ? pokemon.url : pokemon.pokemon.url} />
           ))
         }
       </div>
+
+      <div className='button-pages-container' >
+        <button onClick={() => setPage(page-1)} disabled={page==1} >Previous page</button>
+        <ul>
+
+          {
+            numbersTotalPages.map(numberButton => (
+              <li key={`${numberButton}`} onClick={() => setPage(numberButton)} className={page == numberButton ? 'select-button' : 'button-select'} >{numberButton}</li>
+            ))
+          }
+
+        </ul>
+        <button onClick={() => setPage(page+1)} disabled={page==totalPages} >Next page</button>
+      </div>
+
     </div>
   );
 };
