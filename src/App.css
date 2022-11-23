@@ -215,10 +215,13 @@ body{
   }
 }
 
+/* Pokeball container */
+
 .pokeball-container{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
+  padding: 60px;
 }
 
 /* pokedex id */
@@ -242,7 +245,7 @@ body{
 .abilites{
   padding: 15px;
   position: absolute;
-  translate: 28vw  -60vh;
+  translate: 25vw  -60vh;
   border-radius: 20px;
   box-shadow: 0 0 20px 2px #3ebf2a inset;
   color: #3ebf2a;
@@ -266,17 +269,13 @@ body{
   width: 40%;
 }
 
-list-moves-container{
-  width: 20%;
-}
-
 .list-moves-container h2{
-  width: 124%;
+  width: 100%;
   text-align: center;
   height: 10vh;
   margin: 0;
   color: #3ebf2a;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .list-moves {
@@ -287,7 +286,7 @@ list-moves-container{
   border-left: 2px solid #3ebf2a;
   list-style: none;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;

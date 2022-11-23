@@ -10,11 +10,11 @@ img {
   width: 70%;
   height: 50%;
   filter: drop-shadow(0 0 0.75rem rgb(69, 50, 54));    
-  margin-bottom: 100px;
 }
 .pokemon {
   width: 100%;
   max-width: 300px;
+  height: 25rem;
 }
 
 .container__pokeball {
@@ -43,6 +43,7 @@ img {
 .container__pokeball:hover .pokebal {
   transform: scale(1) translateY(0) translate(0);
   opacity: 1;
+  animation: bounce 1s infinite ;
 }
 
 .pokeball__top {
@@ -77,7 +78,7 @@ img {
   left: 50%;
   top: 46%;
   transform: translate(-50%) translateY(-46%);
-  animation: pokeball-circle .5s linear infinite alternate
+  animation: pokeball-circle .5s linear infinite alternate;
 }
 
 .pokeball__img3 {
@@ -89,14 +90,14 @@ img {
 .pokeball__card {
   position: absolute;
   z-index: 7;
-  transform: scale(.1);
   transition: .5s;
-  width: 180rem;
-  height: 250rem;
+  width: 18rem;
+  height: 25rem;
   margin: auto;
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-basic.png");
   background-size: cover;
   text-align: center;
+  padding: 20px;
 }
 .fire{
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-fire.png");
@@ -171,31 +172,28 @@ img {
 
 .card-text{
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 170px;
+  font-size: 17px;
   color: black;
-  margin: 20px;
-  padding: 0;
-  border-radius: 75px;
-  background-color: rgba(128, 128, 128, 0.569);
-  width: 1000px;
-
+  margin: 0;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  background-color: rgba(128, 128, 128, 0.569);  
 }
 .card-text-container{
-  margin-top: 90px;
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-left: 290px;
+  gap: 5px;
 }
 .card-title{
-  font-size: 250px;
+  margin: 0;
+  font-size: 25px;
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
-  margin-bottom: 0;
-  margin-top: 30px;
-  
 }
 .card-subtitle{
-  font-size: 200px;
-  font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
