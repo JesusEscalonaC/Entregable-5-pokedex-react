@@ -38,20 +38,25 @@ const Pokedex = () => {
   console.log(pokemon)
 
   return (
-    <div>
-      <h1>Pokedex</h1>
+    <div className='pokedex'>
       <h2>Welcome {pokeName}! </h2>
-      <input type="text" placeholder='insert pokemon' onChange={(e) => setPokemonName(e.target.value)} />
-      <button onClick={searchPokemon}>search</button>
-      <select onChange={filterType} name="" id="">
-        <option value={allPokemons}>All pokemon</option>
-        {pokeTypes.map((type) => (
-          <option key={type.name} value={type.url}>
-            {type.name}
-          </option>
-        ))}
 
-      </select>
+      <div className='search-or-select-pokemon' >
+        
+        <input type="text" placeholder='insert pokemon' onChange={(e) => setPokemonName(e.target.value)} />
+        <button onClick={searchPokemon}>search</button>
+        <select onChange={filterType} name="" id="">
+          <option value={allPokemons}>All pokemon</option>
+          {pokeTypes.map((type) => (
+            <option key={type.name} value={type.url}>
+              {type.name}
+            </option>
+          ))}
+
+        </select>
+        
+      </div>
+
       <div className='pokeball-container'>
         {
           pokemon.map(pokemon => (

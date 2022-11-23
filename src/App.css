@@ -215,6 +215,34 @@ body{
   }
 }
 
+/* Pokedex  */
+
+.pokedex h2 {
+  margin-left: 30px;
+  color: white;
+}
+
+/* Search Or Select Pokemon */
+
+.search-or-select-pokemon{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-or-select-pokemon button {
+  background-color: rgb(23, 24, 24);
+  height: 40px;
+  width: 100px;
+  box-shadow: 0 0 10px 2px inset rgba(255, 0, 0, 0.803) ;
+  border-color: rgba(255, 0, 0, 0.843);
+}
+
+.search-or-select-pokemon select::-webkit-scrollbar{
+  width: 1px;
+}
+
 /* Pokeball container */
 
 .pokeball-container{
