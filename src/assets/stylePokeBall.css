@@ -95,21 +95,27 @@ img {
   height: 25rem;
   margin: auto;
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-basic.png");
+  background-color: #e5d8d8;
   background-size: cover;
   text-align: center;
   padding: 20px;
 }
 .fire{
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-fire.png");
+  background-color: #cf2d2d;
 }
 .grass{
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-grass.png");
+  background-color: #a4d655;
+  
 }
 .water{
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-water.png");
+  background-color: #6fc2ff;
 }
 .bug{
   background-image: url("https://poke-api-9001.netlify.app/img/templeate-bug.png");
+  background-color: #a9d484;
 }
 .container__pokeball:hover .pokeball__card {
   opacity: 0;

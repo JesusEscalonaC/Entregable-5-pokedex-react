@@ -43,9 +43,9 @@ const Pokedex = () => {
 
       <div className='search-or-select-pokemon' >
         
-        <input type="text" placeholder='insert pokemon' onChange={(e) => setPokemonName(e.target.value)} />
+        <input className='search-or-select-pokemon-input' type="text" placeholder='insert pokemon' onChange={(e) => setPokemonName(e.target.value)} />
         <button onClick={searchPokemon}>search</button>
-        <select onChange={filterType} name="" id="">
+        <select className='search-or-select-pokemon-select' onChange={filterType} name="" id="">
           <option value={allPokemons}>All pokemon</option>
           {pokeTypes.map((type) => (
             <option key={type.name} value={type.url}>
