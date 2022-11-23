@@ -80,15 +80,18 @@ const Pokedex = () => {
 
       <div className='button-pages-container' >
         <button onClick={() => setPage(page-1)} disabled={page==1} >Previous page</button>
+        
+        
         <ul>
-
+        <div className='buttons-numbers'>
           {
             numbersTotalPages.map(numberButton => (
               <li key={`${numberButton}`} onClick={() => setPage(numberButton)} className={page == numberButton ? 'select-button' : 'button-select'} >{numberButton}</li>
             ))
           }
-
+          </div>
         </ul>
+       
         <button onClick={() => setPage(page+1)} disabled={page==totalPages} >Next page</button>
       </div>
 
