@@ -26,12 +26,16 @@ const Pokedex = () => {
     const searchPokemon = () =>{
         navigate(`/pokedex/${pokemonName.toLowerCase()}`)
     }
+    
     const filterType = (e) =>{
        const url = e.target.value;
        axios
        .get(url)
-       .then((res) => setPokemon(res.data.pokemon))
+       .then((res) => setPokemon(res.data.pokemon));
     }
+
+    console.log(pokemon)
+
     return (
         <div>
             <h1>Pokedex</h1>
@@ -41,9 +45,9 @@ const Pokedex = () => {
             <select onChange={filterType} name="" id="">
 
             {pokeTypes.map((type) => (
-            <option key={type.name} value={type.url}>
-                {type.name}
-            </option>
+              <option key={type.name} value={type.url}>
+                  {type.name}
+              </option>
           ))}
 
             </select>
@@ -51,7 +55,7 @@ const Pokedex = () => {
             {
                 pokemon.map(pokemon =>(
                     <PokemonCard 
-                     key = {pokemon.name}
+                     key = {pokemon.url ? pokemon.url : pokemon.pokemon.url}
                      url = {pokemon.url ? pokemon.url : pokemon.pokemon.url} />
                 ))
             }

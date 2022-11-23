@@ -6,7 +6,7 @@ body{
 .App{
   width: 100%;
   height: 100vh;
-  
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .container-page{
   display: flex;
@@ -23,7 +23,6 @@ body{
   justify-content: center;
   text-align: center;
   margin: auto;
-  font-family: 'Source Sans Pro', sans-serif;
   color: #b1afaf;
   
 }
@@ -220,4 +219,89 @@ body{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+}
+
+/* pokedex id */
+
+.pokedex-id{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-detail-container{
+  width: 50%;
+  padding: 30px;
+  color: white;
+}
+
+.pokemon-detail  h4 {
+  color:white;
+}
+
+.abilites{
+  padding: 15px;
+  position: absolute;
+  translate: 28vw  -60vh;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 2px #3ebf2a inset;
+  color: #3ebf2a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.abilites ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.pokemon-detail img {
+  width: 40%;
+}
+
+list-moves-container{
+  width: 20%;
+}
+
+.list-moves-container h2{
+  width: 124%;
+  text-align: center;
+  height: 10vh;
+  margin: 0;
+  color: #3ebf2a;
+  font-size: 40px;
+}
+
+.list-moves {
+  width: 100%;
+  margin: 0;
+  height: 90vh;
+  overflow-y: auto;
+  border-left: 2px solid #3ebf2a;
+  list-style: none;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.list-moves::-webkit-scrollbar{
+  width: 2px;
+}
+
+.list-moves::-webkit-scrollbar-track {
+  background-color: #3ebf2a;
+}
+
+.list-moves::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
 }

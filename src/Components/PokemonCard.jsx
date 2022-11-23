@@ -13,10 +13,12 @@ const PokemonCard = ({url}) => {
         .get(url)
         .then(res => setPokemon(res.data))
     },[])
-    console.log(pokemon)
+    // console.log(pokemon)
+
     const getTypes = () =>{
         return pokemon.types?.map( type => " "+type.type.name)
-      }
+    }
+
     return (
        
         <div className="pokemon">
