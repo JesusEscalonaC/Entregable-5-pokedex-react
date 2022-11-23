@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
-
+*{
+  box-sizing: border-box;
+}
 img {
   width: 100%;
-  height: auto
+  height: auto;
 }
-
+.pokedex-img{
+  width: 70%;
+  height: 50%;
+  filter: drop-shadow(0 0 0.75rem rgb(69, 50, 54));    
+  margin-bottom: 100px;
+}
 .pokemon {
   width: 100%;
   max-width: 300px;
@@ -84,15 +91,25 @@ img {
   z-index: 7;
   transform: scale(.1);
   transition: .5s;
-  width: 100rem;
-  height: 200rem;
+  width: 180rem;
+  height: 250rem;
   margin: auto;
-  background-color:#946a45;
-  border: 2px solid black;
+  background-image: url("https://poke-api-9001.netlify.app/img/templeate-basic.png");
+  background-size: cover;
   text-align: center;
-
 }
-
+.fire{
+  background-image: url("https://poke-api-9001.netlify.app/img/templeate-fire.png");
+}
+.grass{
+  background-image: url("https://poke-api-9001.netlify.app/img/templeate-grass.png");
+}
+.water{
+  background-image: url("https://poke-api-9001.netlify.app/img/templeate-water.png");
+}
+.bug{
+  background-image: url("https://poke-api-9001.netlify.app/img/templeate-bug.png");
+}
 .container__pokeball:hover .pokeball__card {
   opacity: 0;
   transition: .5s;
@@ -154,12 +171,31 @@ img {
 
 .card-text{
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 150px;
-  color: #b1afaf;
-  margin: 0;
+  font-size: 170px;
+  color: black;
+  margin: 20px;
+  padding: 0;
+  border-radius: 75px;
+  background-color: rgba(128, 128, 128, 0.569);
+  width: 1000px;
+
+}
+.card-text-container{
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 290px;
 }
 .card-title{
-  font-size: 200px;
-  color: #b1afaf;
+  font-size: 250px;
+  color: black;
   font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 0;
+  margin-top: 30px;
+  
+}
+.card-subtitle{
+  font-size: 200px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
 }
