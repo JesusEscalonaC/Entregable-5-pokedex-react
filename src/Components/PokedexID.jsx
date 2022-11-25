@@ -26,28 +26,6 @@ const PokedexID = () => {
 
             
             <img src={pokemon.sprites?.other.dream_world.front_default} alt="" />
-            <h4>
-              Types:
-              {
-                getTypes()
-              }
-            </h4 >
-
-            <h4>
-              Hp: {pokemon.stats?.[0].base_stat}
-            </h4 >
-
-            <h4>
-              Attack: {pokemon.stats?.[1].base_stat}
-            </h4 >
-
-            <h4>
-              Defense: {pokemon.stats?.[2].base_stat}
-            </h4 >
-
-            <h4>
-              Speed: {pokemon.stats?.[5].base_stat}
-            </h4 >
 
             <div className='abilites' >
               <h3>Abilities</h3>
@@ -58,6 +36,35 @@ const PokedexID = () => {
                 }
               </ul>
             </div>
+
+            
+            <div className='pokemon-detail-text' >
+
+              <h4>
+                Types:
+                {
+                  getTypes()
+                }
+              </h4 >
+
+              <h4>
+                Hp: {pokemon.stats?.[0].base_stat}
+              </h4 >
+
+              <h4>
+                Attack: {pokemon.stats?.[1].base_stat}
+              </h4 >
+
+              <h4>
+                Defense: {pokemon.stats?.[2].base_stat}
+              </h4 >
+
+              <h4>
+                Speed: {pokemon.stats?.[5].base_stat}
+              </h4 >
+
+            </div>
+
         </div>
 
       </div>
