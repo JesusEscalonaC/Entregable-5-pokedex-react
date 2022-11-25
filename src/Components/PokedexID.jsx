@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const PokedexID = () => {
   const [pokemon, setPokemon] = useState({});
-  const [ whidthPro, setWidthPro ] = useState(0);
+  const [whidthPro, setWidthPro] = useState(0);
 
   const { id } = useParams();
   useEffect(() => {
@@ -14,9 +14,9 @@ const PokedexID = () => {
   }, [])
 
   useEffect(() => {
-    if(whidthPro <= 100){
-      setTimeout(function() {
-        setWidthPro(whidthPro+1);
+    if (whidthPro <= 100) {
+      setTimeout(function () {
+        setWidthPro(whidthPro + 1);
       }, 60);
     }
   }, [whidthPro])
@@ -61,13 +61,13 @@ const PokedexID = () => {
                 Hp: {pokemon.stats?.[0].base_stat}
               </h4 >
               <div className='bar'>
-                <div 
-                  className='progress' 
-                  style={{width:`${whidthPro < pokemon.stats?.[0].base_stat ? whidthPro : pokemon.stats?.[0].base_stat }%  `}}
+                <div
+                  className='progress'
+                  style={{ width: `${whidthPro < pokemon.stats?.[0].base_stat ? whidthPro : pokemon.stats?.[0].base_stat}%  ` }}
                 ></div>
               </div>
             </div>
-            
+
             <div className="pokemon-progress-container">
 
               <h4>
@@ -75,9 +75,9 @@ const PokedexID = () => {
               </h4 >
 
               <div className='bar'>
-                <div 
-                  className='progress' 
-                  style={{width:`${whidthPro < pokemon.stats?.[1].base_stat ? whidthPro : pokemon.stats?.[1].base_stat }%  `}}
+                <div
+                  className='progress'
+                  style={{ width: `${whidthPro < pokemon.stats?.[1].base_stat ? whidthPro : pokemon.stats?.[1].base_stat}%  ` }}
                 ></div>
               </div>
 
@@ -90,9 +90,9 @@ const PokedexID = () => {
               </h4 >
 
               <div className='bar'>
-                <div 
-                  className='progress' 
-                  style={{width:`${whidthPro < pokemon.stats?.[2].base_stat ? whidthPro : pokemon.stats?.[2].base_stat }%  `}}
+                <div
+                  className='progress'
+                  style={{ width: `${whidthPro < pokemon.stats?.[2].base_stat ? whidthPro : pokemon.stats?.[2].base_stat}%  ` }}
                 ></div>
               </div>
 
@@ -105,9 +105,9 @@ const PokedexID = () => {
               </h4 >
 
               <div className='bar'>
-                <div 
-                  className='progress' 
-                  style={{width:`${whidthPro < pokemon.stats?.[5].base_stat ? whidthPro : pokemon.stats?.[5].base_stat }%  `}}
+                <div
+                  className='progress'
+                  style={{ width: `${whidthPro < pokemon.stats?.[5].base_stat ? whidthPro : pokemon.stats?.[5].base_stat}%  ` }}
                 ></div>
               </div>
 

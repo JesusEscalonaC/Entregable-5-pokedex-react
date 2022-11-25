@@ -9,7 +9,7 @@ const Pokedex = () => {
   const [pokemon, setPokemon] = useState([])
   const [pokemonName, setPokemonName] = useState("")
   const [pokeTypes, setPokeTypes] = useState([])
-  const [ page, setPage ] = useState(1);
+  const [page, setPage] = useState(1);
 
 
   const navigate = useNavigate();
@@ -34,26 +34,26 @@ const Pokedex = () => {
     const url = e.target.value;
     axios
       .get(url)
-      .then(res => { setPokemon(res.data.pokemon ? res.data.pokemon : res.data.results ); setPage(1) } )
+      .then(res => { setPokemon(res.data.pokemon ? res.data.pokemon : res.data.results); setPage(1) })
   }
 
   const pokemonsPerPage = 8;
   const lastIndexPokemon = page * pokemonsPerPage;
   const firstIndexPokemon = lastIndexPokemon - pokemonsPerPage;
-  const pokemonPaginated =  pokemon.slice(firstIndexPokemon , lastIndexPokemon);
-  const totalPages = Math.ceil(pokemon.length/pokemonsPerPage);
+  const pokemonPaginated = pokemon.slice(firstIndexPokemon, lastIndexPokemon);
+  const totalPages = Math.ceil(pokemon.length / pokemonsPerPage);
   const numbersTotalPages = [];
-  for(let i=1; i <= totalPages; i++){
+  for (let i = 1; i <= totalPages; i++) {
     numbersTotalPages.push(i)
   }
-  
+
 
   return (
     <div className='pokedex'>
       <h2>Welcome {pokeName}! </h2>
 
       <div className='search-or-select-pokemon' >
-        
+
         <input className='search-or-select-pokemon-input' type="text" placeholder='insert pokemon' onChange={(e) => setPokemonName(e.target.value)} />
         <button onClick={searchPokemon}>search</button>
         <select className='search-or-select-pokemon-select' onChange={filterType} name="" id="">
@@ -65,7 +65,7 @@ const Pokedex = () => {
           ))}
 
         </select>
-        
+
       </div>
 
       <div className='pokeball-container'>
@@ -79,20 +79,20 @@ const Pokedex = () => {
       </div>
 
       <div className='button-pages-container' >
-        <button onClick={() => setPage(page-1)} disabled={page==1} >Previous page</button>
-        
-        
+        <button onClick={() => setPage(page - 1)} disabled={page == 1} >Previous page</button>
+
+
         <ul>
-        <div className='buttons-numbers'>
-          {
-            numbersTotalPages.map(numberButton => (
-              <li key={`${numberButton}`} onClick={() => setPage(numberButton)} className={page == numberButton ? 'select-button' : 'button-select'} >{numberButton}</li>
-            ))
-          }
+          <div className='buttons-numbers'>
+            {
+              numbersTotalPages.map(numberButton => (
+                <li key={`${numberButton}`} onClick={() => setPage(numberButton)} className={page == numberButton ? 'select-button' : 'button-select'} >{numberButton}</li>
+              ))
+            }
           </div>
         </ul>
-       
-        <button onClick={() => setPage(page+1)} disabled={page==totalPages} >Next page</button>
+
+        <button onClick={() => setPage(page + 1)} disabled={page == totalPages} >Next page</button>
       </div>
 
     </div>
