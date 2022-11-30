@@ -62,16 +62,16 @@ const PokedexID = () => {
                     >
                       <style>
                         {`
-                      @keyframes progres${index} {
-                        0%{
-                          width: 0;
-                        }
-
-                        100%{
-                          width:${stats.base_stat}%
-                        }
-                      }
-                    `}
+                          @keyframes progres${index} {
+                            0%{
+                              width: 0;
+                            }
+                          
+                            100%{
+                              width:${stats.base_stat}%
+                            }
+                          }
+                        `}
                       </style>
                     </div>
                   </div>
