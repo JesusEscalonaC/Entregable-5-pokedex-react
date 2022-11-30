@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 const PokedexID = () => {
   const [pokemon, setPokemon] = useState({});
-  const [whidthPro, setWidthPro] = useState(0);
 
   const { id } = useParams();
   useEffect(() => {
@@ -13,19 +12,13 @@ const PokedexID = () => {
       .then(res => setPokemon(res.data))
   }, [])
 
-  useEffect(() => {
-    if (whidthPro <= 100) {
-      setTimeout(function () {
-        setWidthPro(whidthPro + 1);
-      }, 60);
-    }
-  }, [whidthPro])
-
   const getTypes = () => {
     return pokemon.types?.map(type => " " + type.type.name)
   }
 
-  // console.log(pokemon)
+  const stats = pokemon.stats?.filter(stat => stat.stat.name == 'hp' || stat.stat.name == 'attack' || stat.stat.name == 'defense' || stat.stat.name == 'speed')
+
+  console.log(stats)
 
   return (
     <div className='pokedex-id'>
@@ -56,62 +49,35 @@ const PokedexID = () => {
               }
             </h4 >
 
-            <div className='pokemon-progress-container'>
-              <h4>
-                Hp: {pokemon.stats?.[0].base_stat}
-              </h4 >
-              <div className='bar'>
-                <div
-                  className='progress'
-                  style={{ width: `${whidthPro < pokemon.stats?.[0].base_stat ? whidthPro : pokemon.stats?.[0].base_stat}%  ` }}
-                ></div>
-              </div>
-            </div>
+            {
+              stats?.map((stat, index) => (
+                <div className='pokemon-progress-container' key={index}>
+                  <h4>
+                    {stat.stat.name}: {stat.base_stat}
+                  </h4 >
+                  <div className='bar'>
+                    <div
+                      className='progress'
+                      style={{ width: `${stat.base_stat}%  `, animation: `progres${index} 4s linear` }}
+                    >
+                      <style>
+                        {`
+                      @keyframes progres${index} {
+                        0%{
+                          width: 0;
+                        }
 
-            <div className="pokemon-progress-container">
-
-              <h4>
-                Attack: {pokemon.stats?.[1].base_stat}
-              </h4 >
-
-              <div className='bar'>
-                <div
-                  className='progress'
-                  style={{ width: `${whidthPro < pokemon.stats?.[1].base_stat ? whidthPro : pokemon.stats?.[1].base_stat}%  ` }}
-                ></div>
-              </div>
-
-            </div>
-
-            <div className="pokemon-progress-container">
-
-              <h4>
-                Defense: {pokemon.stats?.[2].base_stat}
-              </h4 >
-
-              <div className='bar'>
-                <div
-                  className='progress'
-                  style={{ width: `${whidthPro < pokemon.stats?.[2].base_stat ? whidthPro : pokemon.stats?.[2].base_stat}%  ` }}
-                ></div>
-              </div>
-
-            </div>
-
-            <div className="pokemon-progress-container">
-
-              <h4>
-                Speed: {pokemon.stats?.[5].base_stat}
-              </h4 >
-
-              <div className='bar'>
-                <div
-                  className='progress'
-                  style={{ width: `${whidthPro < pokemon.stats?.[5].base_stat ? whidthPro : pokemon.stats?.[5].base_stat}%  ` }}
-                ></div>
-              </div>
-
-            </div>
+                        100%{
+                          width:${stats.base_stat}%
+                        }
+                      }
+                    `}
+                      </style>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
 
 
           </div>
